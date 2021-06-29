@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <main>
+        <h1 id="heading"> Library </h1>
+        <p id="description"> Enter the Details</p>
+    </main>
+      <br>
+        <div id="form_field">
+            <form id="survey-form">
+             <label for="title" id=title-label>Title</label><br>
+             <input type="text" id="title" name="title" placeholder="Enter the title" class="text_input" required>
+                <br><br>
+                <label for="author" id="author-label">Author</label><br>
+                <input type="text" id="author" name="author" placeholder="Enter the Author" class="text_input" required>
+                <br><br>
+                <label for="number" id="number-label">Pages</label><br>
+                <input type="number" name="number" id="number" class="text_input" placeholder="Enter the number of pages" max="0" min="1000">
+                <br><br>
+                <label for="dropdown"> Have you read the book ? </label><br>
+                <select id="dropdown" name="dropdown" placeholder="Select Current Role" class="dropdown">
+                 <option value="Yes">Yes</option>
+                    <option value='No'>No</option>
+                 </select>
+                <br><br>
+                <input type="submit" id="submit">
+             </form>
+        </div>
+        <br><br><br>
+        <div id='bookinformation'>
+            
+        </div>
+    
+</body>
+</html>
