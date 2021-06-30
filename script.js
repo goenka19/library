@@ -1,6 +1,13 @@
 //Library array creates
-const library = [];
-
+var library = [];
+if(localStorage.getItem('library'))
+{
+    library = JSON.parse(localStorage.getItem('library'));
+}
+else
+{
+    console.log('hello');
+}
 //constructor for new book object 
 function bookDetails(title,author,number,read)
 {
@@ -14,6 +21,9 @@ function bookDetails(title,author,number,read)
 var bookinformation = document.querySelector('#bookinformation');
 
 var button = document.querySelector('#submit');
+
+librarydata();
+
 button.addEventListener('click', ()=>
 {
     
@@ -21,7 +31,7 @@ button.addEventListener('click', ()=>
     var book_author = document.querySelector('#author').value;
     var book_number = document.querySelector('#number').value;
     var book_dropdown = document.querySelector('#dropdown').value;
-    var newbook = new bookDetails(book_title,book_author,book_number,book_dropdown)
+    let newbook = new bookDetails(book_title,book_author,book_number,book_dropdown)
     
     library.push(newbook);
 
@@ -86,7 +96,11 @@ function librarydata()
         details.appendChild(deletebook);
         
         bookinformation.appendChild(details);
-
+        
         index++;
     }))
+    localStorage.setItem('library', JSON.stringify(library));
+    //console.log(JSON.parse(localStorage.getItem('library')));
+    //console.log(library);
+
 }
